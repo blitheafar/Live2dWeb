@@ -618,11 +618,11 @@ export class LAppModel extends CubismUserModel {
     }
 
     /**
-     * 引数で指定したモーションの再生を開始する
-     * @param group モーショングループ名
-     * @param no グループ内の番号
+     * （开始播放参数指定的动作）引数で指定したモーションの再生を開始する
+     * @param group （运动组名称）モーショングループ名
+     * @param no （组号）グループ内の番号
      * @param priority 優先度
-     * @return 開始したモーションの識別番号を返す。個別のモーションが終了したか否かを判定するisFinished()の引数で使用する。開始できない時は[-1]
+     * @return （返回开始运动的标识号。 在isFinished（）的参数中使用，以确定单个运动是否已结束。 如果您无法开始[-1]）開始したモーションの識別番号を返す。個別のモーションが終了したか否かを判定するisFinished()の引数で使用する。開始できない時は[-1]
      */
     public startMotion(group: string, no: number, priority: number): CubismMotionQueueEntryHandle
     {
@@ -692,10 +692,11 @@ export class LAppModel extends CubismUserModel {
     }
 
     /**
-     * ランダムに選ばれたモーションの再生を開始する。
-     * @param group モーショングループ名
+     * ランダムに選ばれたモーションの再生を開始する。（开始播放随机选择的动作。）
+     * @param group モーショングループ名（运动组名称）
      * @param priority 優先度
-     * @return 開始したモーションの識別番号を返す。個別のモーションが終了したか否かを判定するisFinished()の引数で使用する。開始できない時は[-1]
+     * @return （返回开始运动的标识号。 在isFinished（）的参数中使用，以确定单个运动是否已结束。 如果您无法开始[-1]）
+     * 開始したモーションの識別番号を返す。個別のモーションが終了したか否かを判定するisFinished()の引数で使用する。開始できない時は[-1]
      */
     public startRandomMotion(group: string, priority: number): CubismMotionQueueEntryHandle
     {
@@ -760,7 +761,7 @@ export class LAppModel extends CubismUserModel {
     }
 
     /**
-     * イベントの発火を受け取る
+     * （接收事件触发）イベントの発火を受け取る
      */
     public motionEventFired(eventValue: csmString): void
     {

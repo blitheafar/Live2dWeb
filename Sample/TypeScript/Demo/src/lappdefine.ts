@@ -40,9 +40,9 @@ export namespace LAppDefine
     // モデルを配置したディレクトリ名の配列
     // ディレクトリ名とmodel3.jsonの名前を一致させておくこと
     export const ModelDir: string[] = [
+        "Mark",
         "Haru",
         "Hiyori",
-        "Mark",
         "Natori",
         "Rice"
     ]
@@ -56,14 +56,23 @@ export namespace LAppDefine
     export const HitAreaNameHead: string = "Head";
     export const HitAreaNameBody: string = "Body";
 
+    //新增自定义点击区域
+    //做题正确动作
+    export const CorrectRes: string = "Correct";
+    //做题错误动作
+    export const WrongRes: string = "Wrong";
+    //思考中动作
+    export const ThinkingRes: string = "Thinking";
+
+
     // モーションの優先度定数
     export const PriorityNone: number = 0;
     export const PriorityIdle: number = 1;
     export const PriorityNormal: number = 2;
     export const PriorityForce: number = 3;
 
-    // デバッグ用ログの表示オプション
-    export const DebugLogEnable: boolean = true;
+    //（调试日志显示选项） デバッグ用ログの表示オプション
+    export const DebugLogEnable: boolean = false;
     export const DebugTouchLogEnable: boolean = false;
 
     // Frameworkから出力するログのレベル設定

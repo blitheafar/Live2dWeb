@@ -1,1 +1,4 @@
 node_modules
+
+#忽略dist文件夹
+/Sample/TypeScript/Demo/dist

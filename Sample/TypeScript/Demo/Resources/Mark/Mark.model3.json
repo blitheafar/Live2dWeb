@@ -13,7 +13,9 @@
 					"File": "motions/mark_m01.motion3.json",
 					"FadeInTime": 0.5,
 					"FadeOutTime": 0.5
-				},
+				}
+			],
+			"Thinking":[
 				{
 					"File": "motions/mark_m02.motion3.json",
 					"FadeInTime": 0.5,
@@ -23,12 +25,16 @@
 					"File": "motions/mark_m03.motion3.json",
 					"FadeInTime": 0.5,
 					"FadeOutTime": 0.5
-				},
+				}
+			],
+			"Wrong":[
 				{
 					"File": "motions/mark_m04.motion3.json",
 					"FadeInTime": 0.5,
 					"FadeOutTime": 0.5
-				},
+				}
+			],
+			"Correct":[
 				{
 					"File": "motions/mark_m05.motion3.json",
 					"FadeInTime": 0.5,

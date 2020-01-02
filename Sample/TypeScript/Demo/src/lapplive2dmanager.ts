@@ -115,6 +115,7 @@ export class LAppLive2DManager
         {
             //打印用户点击坐标
             LAppPal.printLog("[APP]tap point: {x: {0} y: {1}}", x.toFixed(2), y.toFixed(2));
+            console.log("models.getsize"+this._models)
         }
 
         //遍历模型
@@ -126,6 +127,7 @@ export class LAppLive2DManager
                 {
                     LAppPal.printLog("[APP]hit area: [{0}]", LAppDefine.HitAreaNameHead);
                 }
+                //选中某个模型后设置表情？
                 this._models.at(i).setRandomExpression();
             }
             else if(this._models.at(i).hitTest(LAppDefine.HitAreaNameBody, x, y))
@@ -134,7 +136,7 @@ export class LAppLive2DManager
                 {
                     LAppPal.printLog("[APP]hit area: [{0}]", LAppDefine.HitAreaNameBody);
                 }
-                //播放动作
+                //播放Tapbody组内的随机动作
                 this._models.at(i).startRandomMotion(LAppDefine.MotionGroupTapBody, LAppDefine.PriorityNormal);
             }
         }

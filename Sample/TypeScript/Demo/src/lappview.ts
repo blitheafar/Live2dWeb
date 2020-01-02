@@ -279,7 +279,26 @@ export class LAppView
     _isClick: boolean;                      // クリック中
 }
 
+// interface MotionType{
+//     correct:'Correct',
+//     wrong:'Wrong',
+//     thinking:'Thinking'
+// }
 //暴露一个方法供外部调用，自定义动作
-(window as any).playlive2d = () => {
-    return 'hi';
+(window as any).playlive2d = (type:string) => {
+    let live2DManager: LAppLive2DManager = LAppLive2DManager.getInstance();
+    //播放指定动作
+    switch (type) {
+        case LAppDefine.CorrectRes:
+            live2DManager._models.at(0).startRandomMotion(LAppDefine.CorrectRes, LAppDefine.PriorityNormal);
+            break;
+        case LAppDefine.WrongRes:
+            live2DManager._models.at(0).startRandomMotion(LAppDefine.WrongRes, LAppDefine.PriorityNormal);
+            break;
+        case LAppDefine.ThinkingRes:
+            live2DManager._models.at(0).startRandomMotion(LAppDefine.ThinkingRes, LAppDefine.PriorityNormal);
+            break;
+        default:
+            break;
+    }
 }

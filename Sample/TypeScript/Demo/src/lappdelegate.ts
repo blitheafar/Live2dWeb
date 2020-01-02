@@ -272,7 +272,8 @@ export class LAppDelegate
     public initializeCubism(): void
     {
         // setup cubism
-        this._cubismOption.logFunction = LAppPal.printMessage;
+        //临时注释
+        // this._cubismOption.logFunction = LAppPal.printMessage;
         this._cubismOption.loggingLevel = LAppDefine.CubismLoggingLevel;
         Csm_CubismFramework.startUp(this._cubismOption);
 
