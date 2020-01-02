@@ -178,6 +178,7 @@ export class LAppView
     }
 
     /**
+     * 当指针触摸时移动时调用。
      * タッチしているときにポインタが動いたら呼ばれる。
      *
      * @param pointX スクリーンX座標
@@ -195,6 +196,7 @@ export class LAppView
     }
 
     /**
+     * 触摸结束时调用。
      * タッチが終了したら呼ばれる。
      *
      * @param pointX スクリーンX座標

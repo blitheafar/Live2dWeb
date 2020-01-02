@@ -319,12 +319,20 @@ function onClickBegan(e: MouseEvent): void
 }
 
 /**
+ * 当鼠标指针移动时调用。
  * マウスポインタが動いたら呼ばれる。
  */
 function onMouseMoved(e: MouseEvent): void
 {
+    //总返回true?
     if(!LAppDelegate.getInstance()._captured)
     {
+        //眼睛跟随鼠标移动
+        let rect = (<Element>e.target).getBoundingClientRect();
+        let posX: number = e.clientX - rect.left;
+        let posY: number = e.clientY - rect.top;
+
+        LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
         return;
     }
 
@@ -339,6 +347,7 @@ function onMouseMoved(e: MouseEvent): void
     let posY: number = e.clientY - rect.top;
 
     LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
+
 }
 
 /**
@@ -397,8 +406,10 @@ function onTouchMoved(e: TouchEvent): void
         return;
     }
 
+    //取得react dom?
     let rect = (<Element>e.target).getBoundingClientRect();
 
+    //取得鼠标坐标
     let posX = e.changedTouches[0].clientX - rect.left;
     let posY = e.changedTouches[0].clientY - rect.top;
 
