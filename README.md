@@ -29,7 +29,8 @@ Cubism Coreライブラリと組み合わせて使用します。
 
 ## Live2D Cubism Core for Web
 
-モデルをロードするためのライブラリです。
+用于加载模型的库。
+该存储库不管理Cubism Core。 从此处下载Cubism SDK for Web，然后将文件复制到Core目录中。
 
 当リポジトリではCubism Coreを管理していません。
 [こちら](https://www.live2d.com/download/cubism-sdk/download-web/)からCubism SDK for Webをダウンロードして、
@@ -37,6 +38,7 @@ Coreディレクトリのファイルをコピーしてください。
 
 
 ## 開発環境の構築方法
+如何建立开发环境
 
 1. [Node.js](https://nodejs.org/)をインストールします。
 
@@ -48,51 +50,61 @@ Coreディレクトリのファイルをコピーしてください。
 
 
 ## ビルド方法
+建立方法
 
 1. Visual Studio Codeでプロジェクトディレクトリを開きます。
+在Visual Studio Code中打开项目目录。
 
 1. ビルドに必要な物をインストールします。
    ctrl+shift+P(macOSでは⌘+⇧+P)で`Tasks: Run Task`から`npm: install`を選択、
    または、`package.json`があるディレクトリ上にてターミナル上で`npm install`でサーバが起動します。
+安装您需要构建的东西。 选择npm：从任务中安装：使用ctrl + shift + P运行任务（在macOS上为⌘+⇧+ P），或者在终端上package.json所在目录的终端上使用npm install启动服务器。
 
 1. ビルドを行います。
    ctrl+shift+B(macOSでは⌘+⇧+B)でビルドタスクを選択、またはターミナル上でnpmコマンドを実行してJavaScriptを生成します。
+   建立。 使用ctrl + shift + B（在macOS上为⌘+⇧+ B）选择构建任务，或在终端上执行npm命令以生成JavaScript。
 
 ### ビルドタスクの説明
+生成任务说明
 
 | コマンド | 説明 |
 | --- | --- |
-| `npm: build-framework` | フレームワークのみをビルドし、JavaScriptファイルを生成します |
-| `npm: watch-framework` | フレームワークのみをウォッチし、変更が保存された際にJavaScriptファイルを再生成します |
-| `npm: build-sample` | サンプルをビルドします |
+| `npm: build-framework` | フレームワークのみをビルドし、JavaScriptファイルを生成します |（仅构建框架并生成JavaScript文件）
+| `npm: watch-framework` | フレームワークのみをウォッチし、変更が保存された際にJavaScriptファイルを再生成します |（保存更改后，仅查看框架并重新生成JavaScript文件）
+| `npm: build-sample` | サンプルをビルドします |（建立sample）
 | `npm: watch-sample` | サンプルをウォッチします |
-| `npm: build-all` | フレームワークとサンプルをビルドします |
+| `npm: build-all` | フレームワークとサンプルをビルドします |(建立框架和样本)
 | `npm: watch-all` | フレームワークとサンプルをウォッチします |
 
 
 ## ローカルサーバの起動方法
+启动本地服务器
 
 ビルドした成果物はそのままファイルを開くだけでは正常に動作しないため、ローカルサーバを起動する必要があります。
+按原样打开该文件无法与内置产品一起正常工作，因此您需要启动本地服务器。
 
 ### 開発時
 
 Visual Studio Codeの画面下の水色のフッターから「Go Live」をクリックするとサーバが起動します。
 ブラウザ上で`index.html`のパスまで進むと動作を確認することが出来ます。
+在Visual Studio代码屏幕底部的浅蓝色页脚中，单击“启动”，以启动服务器。 您可以转到浏览器上的index.html路径来检查操作。
 
 ファイルの更新が行われると自動でブラウザのリロードが行われます。
 また、`F5`を押すとでDebugger for Chromeの拡張が起動してデバッグを行うことが出来ます。
+文件更新后，浏览器将自动重新加载。 同样，按F5键启动Chrome扩展调试器并进行调试。
 
 ### 検証時
 
 ctrl+shift+P(macOSでは⌘+⇧+P)で`Tasks: Run Task`から`npm: serve`を選択、
 または、`package.json`があるディレクトリ上にてターミナル上で`npm run serve`でサーバが起動します。
 ブラウザ上で`index.html`のパスまで進むと動作を確認することが出来ます。
+从任务中选择npm：serve：使用ctrl + shift + P（在macOS上为⌘+⇧+ P）运行Task，或者在package.json所在目录的终端上运行npm run serve。 您可以转到浏览器上的index.html路径来检查操作。
 
 シンプルな構成のサーバのため検証時におすすめです。
-
+由于服务器配置简单，建议进行验证。
 
 ## SDKマニュアル
-
+SDK手册
 [Cubism SDK Manual](https://docs.live2d.com/cubism-sdk-manual/top/)
 
 
