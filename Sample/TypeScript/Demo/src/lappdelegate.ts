@@ -70,10 +70,11 @@ export class LAppDelegate
         // glコンテキストを初期化
         //初始化gl上下文
         gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        
 
         if(!gl)
         {
-            alert("WebGLを初期化できません。ブラウザはサポートしていないようです。");
+            alert("WebGL无法初始化。 浏览器似乎不支持它。");
             gl = null;
 
             // gl初期化失敗
@@ -85,7 +86,7 @@ export class LAppDelegate
             frameBuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING);
         }
 
-        // 透過設定
+        // 透明度设定?
         gl.enable(gl.BLEND);
         gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
@@ -121,6 +122,7 @@ export class LAppDelegate
 
         // Cubism SDKの初期化
         this.initializeCubism();
+
 
         return true;
     }
@@ -187,7 +189,7 @@ export class LAppDelegate
         loop();
     }
 
-    /**
+    /**注册着色器。
      * シェーダーを登録する。
      */
     public createShader(): WebGLProgram

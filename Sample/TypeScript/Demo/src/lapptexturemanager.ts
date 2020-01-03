@@ -36,7 +36,7 @@ export class LAppTextureManager
         this._textures = null;
     }
 
-    /**
+    /**Image loading
      * 画像読み込み
      *
      * @param fileName 読み込む画像ファイルパス名
