@@ -296,9 +296,11 @@ export class LAppView
     switch (type) {
         case LAppDefine.CorrectRes:
             //TODO:加入声音播放
+            playAudio('correctAudio');
             live2DManager._models.at(0).startRandomMotion(LAppDefine.CorrectRes, LAppDefine.PriorityNormal);
             break;
         case LAppDefine.WrongRes:
+            playAudio('wrongAudio');
             live2DManager._models.at(0).startRandomMotion(LAppDefine.WrongRes, LAppDefine.PriorityNormal);
             break;
         case LAppDefine.ThinkingRes:
@@ -308,3 +310,9 @@ export class LAppView
             break;
     }
 }
+
+const playAudio=(audioId:string)=> {
+    const x = document.getElementById(audioId)as HTMLAudioElement;
+    x.play();
+}
+
