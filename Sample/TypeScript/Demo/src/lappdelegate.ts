@@ -288,7 +288,7 @@ export class LAppDelegate
 
         LAppPal.updateTime();
 
-        this._view.initializeSprite();
+        //this._view.initializeSprite();
     }
 
     _cubismOption: Csm_Option;          // Cubism SDK Option

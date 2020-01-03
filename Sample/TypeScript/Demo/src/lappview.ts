@@ -101,14 +101,15 @@ export class LAppView
     {
         gl.useProgram(this._programId);
 
-        if(this._back)
-        {
-            this._back.render(this._programId);
-        }
-        if(this._gear)
-        {
-            this._gear.render(this._programId);
-        }
+        //背景图和齿轮
+        // if(this._back)
+        // {
+        //     this._back.render(this._programId);
+        // }
+        // if(this._gear)
+        // {
+        //     this._gear.render(this._programId);
+        // }
 
         gl.flush();
 
@@ -118,6 +119,7 @@ export class LAppView
     }
 
     /**
+     * 初始化图像。
      * 画像の初期化を行う。
      */
     public initializeSprite(): void
@@ -131,33 +133,33 @@ export class LAppView
         let imageName: string = "";
 
         // 背景画像初期化
-        imageName = LAppDefine.BackImageName;
+        //imageName = LAppDefine.BackImageName;
 
         // 非同期なのでコールバック関数を作成
-        let initBackGroundTexture = (textureInfo: TextureInfo): void =>
-        {
-            let x: number = width * 0.5;
-            let y: number = height * 0.5;
+        // let initBackGroundTexture = (textureInfo: TextureInfo): void =>
+        // {
+        //     let x: number = width * 0.5;
+        //     let y: number = height * 0.5;
 
-            let fwidth = textureInfo.width * 2.0;
-            let fheight = height * 0.95;
-            this._back = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-        };
+        //     let fwidth = textureInfo.width * 2.0;
+        //     let fheight = height * 0.95;
+        //     this._back = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+        // };
 
-        textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initBackGroundTexture);
+        // textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initBackGroundTexture);
 
         // 歯車画像初期化
-        imageName = LAppDefine.GearImageName;
-        let initGearTexture = (textureInfo: TextureInfo): void =>
-        {
-            let x = width - textureInfo.width * 0.5;
-            let y = height - textureInfo.height * 0.5;
-            let fwidth = textureInfo.width;
-            let fheight = textureInfo.height;
-            this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-        };
+        // imageName = LAppDefine.GearImageName;
+        // let initGearTexture = (textureInfo: TextureInfo): void =>
+        // {
+        //     let x = width - textureInfo.width * 0.5;
+        //     let y = height - textureInfo.height * 0.5;
+        //     let fwidth = textureInfo.width;
+        //     let fheight = textureInfo.height;
+        //     this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+        // };
 
-        textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initGearTexture);
+        // textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initGearTexture);
 
         // シェーダーを作成
         if(this._programId == null)
@@ -292,6 +294,7 @@ export class LAppView
     //播放指定动作
     switch (type) {
         case LAppDefine.CorrectRes:
+            //TODO:加入声音播放
             live2DManager._models.at(0).startRandomMotion(LAppDefine.CorrectRes, LAppDefine.PriorityNormal);
             break;
         case LAppDefine.WrongRes:

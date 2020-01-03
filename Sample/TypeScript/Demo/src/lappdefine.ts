@@ -8,6 +8,7 @@
 import {LogLevel} from "../../../../Framework/live2dcubismframework";
 
 /**
+ * Sample App中使用的常量
  * Sample Appで使用する定数
  */
 export namespace LAppDefine
@@ -33,7 +34,7 @@ export namespace LAppDefine
     // 歯車
     export const GearImageName: string = "icon_gear.png";
 
-    // 終了ボタン
+    // 退出按钮,終了ボタン
     export const PowerImageName: string = "CloseNormal.png";
 
     // モデル定義---------------------------------------------
