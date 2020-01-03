@@ -225,10 +225,10 @@ export class LAppView
 
             // 歯車にタップしたか
             //通过右上角齿轮切换人物
-            if(this._gear.isHit(pointX, pointY))
-            {
-                live2DManager.nextScene();
-            }
+            // if(this._gear.isHit(pointX, pointY))
+            // {
+            //     live2DManager.nextScene();
+            // }
         }
     }
 
