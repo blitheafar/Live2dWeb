@@ -20,6 +20,9 @@ export let s_instance: LAppDelegate = null;
 export let gl: WebGLRenderingContext = null;
 export let frameBuffer: WebGLFramebuffer = null;
 
+//加入body dom
+export let body: HTMLElement=null;
+
 /**
  * アプリケーションクラス。
  * Cubism SDKの管理を行う。
@@ -62,8 +65,10 @@ export class LAppDelegate
     {
         // キャンバスの取得
         canvas = <HTMLCanvasElement>document.getElementById("SAMPLE");
+        // body=<HTMLElement>document.getElementsByTagName("body")[0];
 
         // glコンテキストを初期化
+        //初始化gl上下文
         gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
 
         if(!gl)
@@ -88,18 +93,27 @@ export class LAppDelegate
 
         if(supportTouch)
         {
-            // タッチ関連コールバック関数登録
+            // 注册触摸相关的回调函数,タッチ関連コールバック関数登録
             canvas.ontouchstart = onTouchBegan;
             canvas.ontouchmove = onTouchMoved;
             canvas.ontouchend = onTouchEnded;
             canvas.ontouchcancel = onTouchCancel;
+
+            // body.ontouchstart = onTouchBegan;
+            // body.ontouchmove = onTouchMoved;
+            // body.ontouchend = onTouchEnded;
+            // body.ontouchcancel = onTouchCancel;
         }
         else
         {
-            // マウス関連コールバック関数登録
+            // 鼠标相关的回调函数注册,マウス関連コールバック関数登録
             canvas.onmousedown = onClickBegan;
             canvas.onmousemove = onMouseMoved;
             canvas.onmouseup = onClickEnded;
+
+            // body.onmousedown = onClickBegan;
+            // body.onmousemove = onMouseMoved;
+            // body.onmouseup = onClickEnded;
         }
 
         // AppViewの初期化

@@ -18,6 +18,7 @@ import { TextureInfo } from "./lapptexturemanager";
 import { LAppPal } from "./lapppal";
 
 /**
+ * Drawing class.
  * 描画クラス。
  */
 export class LAppView
@@ -62,11 +63,11 @@ export class LAppView
         this._deviceToScreen.scaleRelative(screenW / width, -screenW / width);
         this._deviceToScreen.translateRelative(-width * 0.5, -height * 0.5);
 
-        // 表示範囲の設定
+        // 设定显示范围
         this._viewMatrix.setMaxScale(LAppDefine.ViewMaxScale); // 限界拡張率
         this._viewMatrix.setMinScale(LAppDefine.ViewMinScale); // 限界縮小率
 
-        // 表示できる最大範囲
+        // 最大显示范围
         this._viewMatrix.setMaxScreenRect(
             LAppDefine.ViewLogicalMaxLeft,
             LAppDefine.ViewLogicalMaxRight,

@@ -39,6 +39,7 @@ export namespace Live2DCubismFramework
         }
 
         /**
+         * 获取画布宽度
          * キャンバスの幅を取得する
          */
         public getCanvasWidth(): number

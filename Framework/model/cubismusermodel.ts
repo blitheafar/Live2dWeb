@@ -169,7 +169,10 @@ export namespace Live2DCubismFramework
                 return;
             }
 
-            this._modelMatrix = new CubismModelMatrix(this._model.getCanvasWidth(), this._model.getCanvasHeight());
+            //console.log(this._model.getCanvasWidth(),this._model.getCanvasHeight());
+
+            // this._modelMatrix = new CubismModelMatrix(this._model.getCanvasWidth(), this._model.getCanvasHeight());
+            this._modelMatrix = new CubismModelMatrix(0.32, 0.4);
         }
 
         /**
