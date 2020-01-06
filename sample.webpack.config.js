@@ -12,7 +12,7 @@ module.exports = {
     entry: './Sample/TypeScript/Demo/src/main.ts',
 
     output: {
-        filename: 'index.min.js',
+        filename: 'live2d.index.min.js',
         path: path.join(__dirname, './Sample/TypeScript/Demo/dist')
     },
 
