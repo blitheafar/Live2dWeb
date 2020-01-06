@@ -13,6 +13,8 @@
             background-size: 100% 100%;
         }
         #landlord {
+            display: flex;
+            flex-direction: row;
             user-select: none;
             position: fixed;
             right: 30px;
@@ -24,8 +26,19 @@
             transition: all .3s ease-in-out;
         }
 
+        #landlord>button{
+            width: 30px;
+            height: 80px;
+        }
+
         #SAMPLE {
             position: relative;
+        }
+
+        #live2d_btn_list{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
         }
     </style>
 </head>
@@ -35,6 +48,12 @@
     <div id="landlord">
         <canvas id="SAMPLE" width="280" height="280">
         </canvas>
+        <div id="live2d_btn_list">
+            <button id="live2d_correct">正确</button>
+            <button id="live2d_wrong">错误</button>
+            <button id="live2d_thinking">思考</button>
+            <button id="live2d_hide">隐藏</button>
+        </div>
     </div>
     <audio id="correctAudio">
         <source src="http://ydown.smzy.com/yinpin/2009-8/200982125244175.mp3" type="audio/mpeg">
@@ -51,6 +70,21 @@
 
     <!-- User's Script -->
     <script src="./dist/index.min.js"></script>
+    <script type="text/javascript">
+        [...document.getElementById("live2d_btn_list").getElementsByTagName("button")].forEach((item,index)=>{
+            item.onclick=()=>{
+                if(index===0){
+                    window.playlive2d('Correct')
+                }else if(index===1){
+                    window.playlive2d('Wrong')
+                }else if(index===2){
+                    window.playlive2d('Thinking')
+                }else{
+                    document.getElementById("landlord").style.display="none";
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>
