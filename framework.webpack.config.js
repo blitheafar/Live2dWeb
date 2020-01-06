@@ -20,8 +20,8 @@ glob.sync("./Framework/**/*.ts").map(
 
 module.exports = {
 
-    // モード値を production に設定すると最適化された状態で、
-    // development に設定するとソースマップ有効でJSファイルが出力される
+    // 将模式值设置为生产时，将对其进行优化，productionモード値を production に設定すると最適化された状態で、
+    // 设置为开发时，将在启用源映射的情况下输出JS文件,development に設定するとソースマップ有効でJSファイルが出力される
     mode: 'development',
 
     // メインとなるJavaScriptファイル（エントリーポイント）
