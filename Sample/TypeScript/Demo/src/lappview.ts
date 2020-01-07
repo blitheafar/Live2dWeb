@@ -284,11 +284,6 @@ export class LAppView
     _isClick: boolean;                      // クリック中
 }
 
-// interface MotionType{
-//     correct:'Correct',
-//     wrong:'Wrong',
-//     thinking:'Thinking'
-// }
 //暴露一个方法供外部调用，自定义动作
 (window as any).playlive2d = (type:string) => {
     let live2DManager: LAppLive2DManager = LAppLive2DManager.getInstance();

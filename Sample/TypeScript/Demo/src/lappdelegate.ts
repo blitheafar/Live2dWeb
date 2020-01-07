@@ -65,7 +65,6 @@ export class LAppDelegate
     {
         // キャンバスの取得
         canvas = <HTMLCanvasElement>document.getElementById("SAMPLE");
-        // body=<HTMLElement>document.getElementsByTagName("body")[0];
 
         // glコンテキストを初期化
         //初始化gl上下文
@@ -74,7 +73,7 @@ export class LAppDelegate
 
         if(!gl)
         {
-            alert("WebGL无法初始化。 浏览器似乎不支持它。");
+            console.log("WebGL无法初始化。 浏览器似乎不支持它。");
             gl = null;
 
             // gl初期化失敗
@@ -97,19 +96,16 @@ export class LAppDelegate
             // 注册触摸相关的回调函数,タッチ関連コールバック関数登録
             canvas.ontouchstart = onTouchBegan;
             canvas.ontouchmove = onTouchMoved;
+            // document.ontouchmove = onTouchMoved;
             canvas.ontouchend = onTouchEnded;
             canvas.ontouchcancel = onTouchCancel;
-
-            // body.ontouchstart = onTouchBegan;
-            // body.ontouchmove = onTouchMoved;
-            // body.ontouchend = onTouchEnded;
-            // body.ontouchcancel = onTouchCancel;
         }
         else
         {
             // 鼠标相关的回调函数注册,マウス関連コールバック関数登録
             canvas.onmousedown = onClickBegan;
             canvas.onmousemove = onMouseMoved;
+            // document.onmousemove = onMouseMoved;
             canvas.onmouseup = onClickEnded;
 
             // body.onmousedown = onClickBegan;
@@ -344,12 +340,15 @@ function onMouseMoved(e: MouseEvent): void
     //总返回true?
     if(!LAppDelegate.getInstance()._captured)
     {
-        //眼睛跟随鼠标移动
+        //方法返回元素的大小及其相对于视口的位置
         let rect = (<Element>e.target).getBoundingClientRect();
+        //clientX，返回当事件被触发时鼠标指针向对于浏览器页面（或客户区）的水平坐标。
         let posX: number = e.clientX - rect.left;
         let posY: number = e.clientY - rect.top;
 
         LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
+        console.log('posX=',posX,posY);
+        console.log('origin')
         return;
     }
 
