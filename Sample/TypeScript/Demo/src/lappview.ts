@@ -235,13 +235,14 @@ export class LAppView
 
     /**
      * X座標をView座標に変換する。
+     * 将X坐标转换为View坐标。
      *
-     * @param deviceX デバイスX座標
+     * @param deviceX デバイスX座標，设备X坐标
      */
     public transformViewX(deviceX: number): number
     {
-        let screenX: number = this._deviceToScreen.transformX(deviceX); // 論理座標変換した座標を取得。
-        return this._viewMatrix.invertTransformX(screenX);  // 拡大、縮小、移動後の値。
+        let screenX: number = this._deviceToScreen.transformX(deviceX); // 获取转换为逻辑坐标的坐标。論理座標変換した座標を取得。
+        return this._viewMatrix.invertTransformX(screenX);  // 缩放，移动和移动后的值。拡大、縮小、移動後の値。
     }
 
     /**
@@ -256,6 +257,7 @@ export class LAppView
     }
 
     /**
+     * 将X坐标转换为屏幕坐标。
      * X座標をScreen座標に変換する。
      * @param deviceX デバイスX座標
      */

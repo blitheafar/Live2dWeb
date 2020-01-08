@@ -104,8 +104,8 @@ export class LAppDelegate
         {
             // 鼠标相关的回调函数注册,マウス関連コールバック関数登録
             canvas.onmousedown = onClickBegan;
-            canvas.onmousemove = onMouseMoved;
-            // document.onmousemove = onMouseMoved;
+            // canvas.onmousemove = onMouseMoved;
+            document.onmousemove = onMouseMoved;
             canvas.onmouseup = onClickEnded;
 
             // body.onmousedown = onClickBegan;
@@ -347,8 +347,9 @@ function onMouseMoved(e: MouseEvent): void
         let posY: number = e.clientY - rect.top;
 
         LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
-        console.log('posX=',posX,posY);
-        console.log('origin')
+        console.log('rect',rect.left,rect.top);
+        console.log('client',e.clientX,e.clientY)
+        console.log('pos', posX, posY)
         return;
     }
 
