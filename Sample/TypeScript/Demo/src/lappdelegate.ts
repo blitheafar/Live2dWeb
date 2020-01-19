@@ -347,9 +347,10 @@ function onMouseMoved(e: MouseEvent): void
         let posY: number = e.clientY - rect.top;
 
         LAppDelegate.getInstance()._view.onTouchesMoved(posX, posY);
-        console.log('rect',rect.left,rect.top);
-        console.log('client',e.clientX,e.clientY)
-        console.log('pos', posX, posY)
+        //输出鼠标指针坐标
+        // console.log('rect',rect.left,rect.top);
+        // console.log('client',e.clientX,e.clientY)
+        // console.log('pos', posX, posY)
         return;
     }
 
