@@ -170,9 +170,9 @@ export namespace Live2DCubismFramework
             }
 
             //console.log(this._model.getCanvasWidth(),this._model.getCanvasHeight());
-
-            // this._modelMatrix = new CubismModelMatrix(this._model.getCanvasWidth(), this._model.getCanvasHeight());
-            this._modelMatrix = new CubismModelMatrix(0.32, 0.4);
+            //TODO:修改live2d大小
+            this._modelMatrix = new CubismModelMatrix(this._model.getCanvasWidth()/1.7, this._model.getCanvasHeight()/1.7);
+            // this._modelMatrix = new CubismModelMatrix(0.32, 0.4);
         }
 
         /**
